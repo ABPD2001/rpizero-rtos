@@ -15,7 +15,7 @@ SECTIONS {
     .vector_handlers:{
         *(.vector_handlers*)
     }
-    . = 0x93CB;
+    . = 0x93E8;
     .irq_routines:{
         *(.irq_routines*)
     }

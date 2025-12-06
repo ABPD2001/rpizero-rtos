@@ -34,13 +34,15 @@ typedef struct // 22 bytes
     ubyte_t owner_id;
 } mailbox_t;
 
-typedef struct // 30 bytes
+typedef struct // 82 bytes
 {
     registers_t data;
     int stack_start;
     int stack_end;
     int pc;
+    int lr;
     int veneer;
+    int cpsr;
     int *mailboxes;
     int mailboxes_len;
     ubyte_t status;

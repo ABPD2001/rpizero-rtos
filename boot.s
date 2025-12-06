@@ -86,7 +86,7 @@ irq_source_search:
     ldr pc,[r13]
 
 irq_handler:
-    @ 56 bytes
+    @ 60 bytes
     subs lr,lr,#4
     stmfd r13!,{lr}
     msr spsr_irq, lr
@@ -100,19 +100,22 @@ irq_handler:
     mrs lr,cpsr_c
     
     bl irq_source_search
-    
-    str r1,[r13,#4]
-    ldmfd r0,[r1,r0]
+
+    mov lr,r1
+    mul lr,#4
+    ldmfd r0!,{r1,r0}
     ldr pc,[=IRQ_TABLE,lr]
     
 swi_handler:
-    @ 28 bytes
+    @ 36 bytes
     str r0,[r13]
     
     and r0,lr,#0x000F
     mul r0,r0,#4
     add r0,r0,=SWI_TABLE
 
-    str r0,[r13,#4]
+    str r0,[r13]
+    subs r13,r13,#4
     ldr r0,[r13]
-    ldr pc,[r13,#4]
+    add r13,r13,#4
+    ldr pc,[r13]
