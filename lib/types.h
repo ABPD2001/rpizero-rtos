@@ -53,9 +53,7 @@ typedef struct
 {
     short unsigned int baudrate;
     ubyte_t bits_8;
-    ubyte_t tx_enable;
-    ubyte_t rx_enable;
-    ubyte_t tx_irq;
-    ubyte_t rx_irq;
+    ubyte_t enabled;
+    ubyte_t irq;
 } uart_settings_t;
 #endif
