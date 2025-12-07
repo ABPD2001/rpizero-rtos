@@ -48,4 +48,14 @@ typedef struct // 82 bytes
     ubyte_t status;
     ubyte_t id;
 } PCB_t;
+
+typedef struct
+{
+    short unsigned int baudrate;
+    ubyte_t bits_8;
+    ubyte_t tx_enable;
+    ubyte_t rx_enable;
+    ubyte_t tx_irq;
+    ubyte_t rx_irq;
+} uart_settings_t;
 #endif

@@ -25,7 +25,7 @@ volatile unsigned int *terminated_tasks_queue_len = 0x1FFFF45F;
 
 volatile unsigned int *mailboxes_len = 0x1FFFF45B;
 
-volatile ubyte_t **mini_uart_buffer = 0x1FFFFB24;
+volatile ubyte_t *mini_uart_buffer = 0x1FFFFB24;
 volatile unsigned int *mini_uart_buffer_len = 0x1FFFF46E;
 volatile ubyte_t *uart_allocation = 0x1FFFF924;
 volatile ubyte_t *irq_void = 0x1FFFF293;
